@@ -62,9 +62,9 @@ addEventListener('beforeunload', () => {
   localStorage.setItem('currentItems', allItems);
 });
 
-if(allItems.length == 0){
+if(localStorage.getItem('currentItems')){
   const storedItems = localStorage.getItem('currentItems');
-  if (storedItems !== ''){
+  if (allItems.length == 0){
     allItems = storedItems.split(',');
     displayItems();
   }
