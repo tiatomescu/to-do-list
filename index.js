@@ -5,7 +5,7 @@ let userInput = '';
 /* Dynamically displays items from allItems array */
 const displayItems = () => {
   let allItemsList = document.querySelector('#all-items-list');
-  let listContents = allItems.map((elm) => `<div><button class="item">${elm}</button><button class='x'>x</button></div>`)
+  let listContents = allItems.map((elm) => `<div id="${allItems.indexOf(elm)}"><button class="item">${elm}</button><button class='x'>x</button></div>`)
   .reduce((acc, elm) => acc += elm, '');
   allItemsList.innerHTML = listContents;
 };
@@ -41,8 +41,17 @@ const changeButtonStyle = () => {
 
 changeButtonStyle();
 
-/* Removes '.item' from allItems when corresponding '.x' button clicked */
+/* Removes '.item' from allItems when corresponding '.x' button clicked, then re-displays content*/
 
-//click x, find childElementCount
-//remove corresponding item from allItems
-//hopefully display contents will adjust dynamically :D
+const removeItem = () => {
+  let allItemList = document.querySelector('#all-items-list');
+  allItemList.addEventListener('click', (eventObj) => {
+    if (eventObj.target.tagName === 'BUTTON' && eventObj.target.className == 'x'){
+      let itemIndex = eventObj.target.parentElement.id;
+      allItems.splice(itemIndex, 1);
+      displayItems();
+    }
+  });
+};
+
+removeItem();

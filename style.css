@@ -6,35 +6,101 @@ html {
 }
 
 /* Body */
+body {
+  padding: 10px;
+}
 
 main {
   display: flex;
   flex-direction: column;
+  justify-self: center;
   background-color: #fff0b5;
   border: 1px solid #e3d6a1;
   padding: 10px;
-  width: 50%;
+  height: 80vh;
+  width: 70vh;
 }
+
+/* Contents: input bar */
+
+.input-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  background-color: cornsilk;
+  border: 1px solid #e3d6a1;
+  border-radius: 0.3rem;
+  font-family: "Pixelify Sans", sans-serif;
+  padding: 5px;
+}
+
+input:focus {
+  outline-color: #e3d6a1;
+}
+
+#add-item-btn {
+  background-color: bisque;
+  border: 1px solid #e3d6a1;
+  border-radius: 0.3rem;
+  font-family: "Pixelify Sans", sans-serif;
+  width: 5rem;
+  height: 3rem;
+}
+
+#add-item-btn:active {
+  color:#C7446B;
+}
+
+/* Contents: items list */
 
 #all-items-list {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   padding: 10px;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .item {
   color: black;
-  border: 1px solid grey;
+  background-color: cornsilk;
+  border: 1px solid #e3d6a1;
+  border-radius: 0.3rem;
+  font-family: "Pixelify Sans", sans-serif;
+  padding: 5px;
 }
 
 .item-crossed {
   color: grey;
   text-decoration: line-through;
+  background-color: #fff0b5;
+  border: 1px solid #e3d6a1;
+  border-radius: 0.3rem;
+  font-family: "Pixelify Sans", sans-serif;
+  padding: 10px;
+}
+
+.x {
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: bisque;
+  border: 1px solid #e3d6a1;
+  border-radius: 0.3rem;
+  padding: 5px;
+}
+
+.x:active {
+  color:#C7446B;
 }
 
 /* Footer */
 footer {
-  background-color: bisque;
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
+  padding: 2px 5px;
 }
 
 .url:visited {
@@ -42,5 +108,5 @@ footer {
 }
 
 .url:hover{
-  color: pink;
+  color: #C7446B;
 }
