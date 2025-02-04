@@ -55,3 +55,17 @@ const removeItem = () => {
 };
 
 removeItem();
+
+/* Adds allItems list to local storage prior to refreshing, and calls it back when reloaded! */
+
+addEventListener('beforeunload', () => {
+  localStorage.setItem('currentItems', allItems);
+});
+
+if(allItems.length == 0){
+  const storedItems = localStorage.getItem('currentItems');
+  if (storedItems !== ''){
+    allItems = storedItems.split(',');
+    displayItems();
+  }
+}
