@@ -61,7 +61,6 @@ input:focus {
   gap: 10px;
   padding: 10px;
   font-family: "Pixelify Sans", sans-serif;
-  background-color: #e3d6a1;
   height: 60cqh;
 }
 
@@ -78,7 +77,7 @@ input:focus {
 .item-crossed {
   color: grey;
   text-decoration: line-through;
-  background-color: #fff0b5;
+  background-color: #f8ecbd;
   border: 1px solid #e3d6a1;
   border-radius: 0.3rem;
   font-family: "Pixelify Sans", sans-serif;

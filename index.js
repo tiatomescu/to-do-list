@@ -4,17 +4,22 @@ let userInput = '';
 let allItemsList = document.querySelector('#all-items-list');
 let inputBox = document.querySelector('#input-box');
 let addBtn = document.querySelector('#add-item-btn');
+  //Audio
+let clickAudio = new Audio('/retro-click.mp3');
 
 
 /* On button click, grabs input box value and adds to allItemsList */
 const getInputValue = () => {
 
   inputBox.addEventListener('input', (eventObj) => {
+    let keyAudio = new Audio('/keyboard-click.mp3');
+    keyAudio.play();
     userInput = eventObj.target.value;
   });
 
   addBtn.addEventListener('click', (event) => {
     event.preventDefault();
+    clickAudio.play();
     allItemsList.innerHTML += `<span id="${allItemsList.childElementCount}"><button class="item">${userInput}</button><button class='x'>x</button></span>`;
     inputBox.value = '';
   });
@@ -26,6 +31,7 @@ getInputValue();
 const changeButtonStyle = () => {
   allItemsList.addEventListener('click', (eventObj) => {
     if (eventObj.target.tagName === 'BUTTON' && eventObj.target.className !== 'x'){
+      clickAudio.play();
       let newClass = eventObj.target.className === 'item' ? 'item-crossed' : 'item';
       eventObj.target.className = newClass;
     }
@@ -40,6 +46,7 @@ const removeItem = () => {
   let allItemList = document.querySelector('#all-items-list');
   allItemList.addEventListener('click', (eventObj) => {
     if (eventObj.target.tagName === 'BUTTON' && eventObj.target.className == 'x'){
+      clickAudio.play();
       allItemsList.removeChild(eventObj.target.parentNode);
     }
   });
