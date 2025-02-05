@@ -23,10 +23,9 @@ main {
 
 /* Contents: input bar */
 
-.input-item {
+.input-form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 input {
@@ -62,6 +61,8 @@ input:focus {
   gap: 10px;
   padding: 10px;
   font-family: "Pixelify Sans", sans-serif;
+  background-color: #e3d6a1;
+  height: 60cqh;
 }
 
 .item {
@@ -70,7 +71,8 @@ input:focus {
   border: 1px solid #e3d6a1;
   border-radius: 0.3rem;
   font-family: "Pixelify Sans", sans-serif;
-  padding: 5px;
+  padding: 10px;
+  width: 20cqw;
 }
 
 .item-crossed {
@@ -81,6 +83,7 @@ input:focus {
   border-radius: 0.3rem;
   font-family: "Pixelify Sans", sans-serif;
   padding: 10px;
+  width: 20cqw;
 }
 
 .x {
@@ -88,7 +91,7 @@ input:focus {
   background-color: bisque;
   border: 1px solid #e3d6a1;
   border-radius: 0.3rem;
-  padding: 5px;
+  padding: 10px;
 }
 
 .x:active {
